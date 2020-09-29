@@ -13,10 +13,10 @@ const ReactCustomCheckbox: React.FC<{ foo: boolean }> = ({ foo }) => {
 const App: FunctionComponent = () => {
   return (
     <div>
-      {/* Type error! */}
+      {/* Type error! Fixed after running `npm run patch-package`, which patches `PropsWithAs` in `reakit-utils`. */}
       <Checkbox as={CustomCheckbox} foo={false} />
 
-      {/* Type checks just fine */}
+      {/* Type checks just fine. Is it okay to use `React.FC` in a Preact app? */}
       <Checkbox as={ReactCustomCheckbox} foo={false} />
     </div>
   );

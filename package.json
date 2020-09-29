@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "patch-package": "patch-package"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "patch-package": "^6.2.2",
     "preact": "^10.5.3",
     "reakit": "^1.2.5"
   },

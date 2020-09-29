@@ -1,0 +1,20 @@
+diff --git a/node_modules/reakit-utils/ts/types.d.ts b/node_modules/reakit-utils/ts/types.d.ts
+index bbf533b..1808e2f 100644
+--- a/node_modules/reakit-utils/ts/types.d.ts
++++ b/node_modules/reakit-utils/ts/types.d.ts
+@@ -1,5 +1,6 @@
+ /** @module types */
+ import * as React from "react";
++
+ /**
+  * Render prop type
+  * @memberof types
+@@ -39,7 +40,7 @@ export declare type UnionToIntersection<U> = (U extends any ? (k: U) => void : n
+  * @template P Additional props
+  * @template T React component or string element
+  */
+-export declare type PropsWithAs<P, T extends As> = P & Omit<React.ComponentProps<T>, "as" | keyof P> & {
++export declare type PropsWithAs<P, T extends As> = P & (Omit<React.ComponentProps<T>, "as" | keyof P> | Omit<preact.ComponentProps<T>, "as" | keyof P>) & {
+     as?: T;
+     children?: React.ReactNode | RenderProp<ExtractHTMLAttributes<any>>;
+ };
